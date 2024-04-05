@@ -308,7 +308,6 @@ tfa98xx-v6_dlkm.ko
 audio_extend_dlkm.ko
 sia9175_dlkm.ko
 camera.ko
-msm-cvp.ko
 gsim.ko
 ipam.ko
 ipanetm.ko
@@ -325,7 +324,5 @@ rmnet_aps.ko
 rmnet_sch.ko
 msm_drm.ko
 msm-eva.ko
-explorer.ko
 msm-mmrm.ko
-mmrm_test_module.ko
 msm_video.ko
