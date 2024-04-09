@@ -263,7 +263,7 @@ PRODUCT_COPY_FILES += \
 # Libprotobuff
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-3.9.1-vendorcompat \
-    libprotobuf-cpp-full-3.9.1.so
+    libprotobuf-cpp-full-3.9.1-vendorcompat
 
 # Media
 PRODUCT_COPY_FILES += \
