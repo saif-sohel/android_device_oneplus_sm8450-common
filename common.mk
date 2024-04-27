@@ -127,6 +127,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V2-ndk_platform \
+    android.hardware.graphics.common-V2-ndk_platform.vendor \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh \
@@ -262,7 +263,8 @@ PRODUCT_COPY_FILES += \
 
 # Libprotobuff
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-full-3.9.1-vendorcompat
 
 # Media
 PRODUCT_COPY_FILES += \
