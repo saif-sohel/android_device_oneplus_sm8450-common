@@ -83,6 +83,9 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.security.keymint-service-qti)
             ${PATCHELF} --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
             ;;
+        odm/lib64/libEIS.so)
+            ${PATCHELF} --replace-needed "libui.so" "libui-oos.so" "${2}"
+            ;;
     esac
 }
 
