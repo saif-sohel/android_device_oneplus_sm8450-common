@@ -73,21 +73,6 @@
                              samplingRates="44100 48000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </mixPort>
-                <mixPort name="compressed_offload" role="source"
-                         flags="AUDIO_OUTPUT_FLAG_DIRECT AUDIO_OUTPUT_FLAG_COMPRESS_OFFLOAD AUDIO_OUTPUT_FLAG_NON_BLOCKING AUDIO_OUTPUT_FLAG_GAPLESS_OFFLOAD">
-                    <profile name="" format="AUDIO_FORMAT_MP3"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_LC"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_HE_V1"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000 64000 88200 96000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                    <profile name="" format="AUDIO_FORMAT_AAC_HE_V2"
-                             samplingRates="8000 11025 12000 16000 22050 24000 32000 44100 48000"
-                             channelMasks="AUDIO_CHANNEL_OUT_STEREO AUDIO_CHANNEL_OUT_MONO"/>
-                </mixPort>
                 <mixPort name="voice_tx" role="source">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000 16000 48000" channelMasks="AUDIO_CHANNEL_OUT_MONO AUDIO_CHANNEL_OUT_STEREO"/>
@@ -185,9 +170,9 @@
                 <route type="mix" sink="Earpiece"
                        sources="primary output,raw,deep_buffer,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="Speaker"
-                       sources="primary output,raw,deep_buffer,compressed_offload,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,raw,deep_buffer,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="Speaker Safe"
-                       sources="primary output,raw,deep_buffer,compressed_offload,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,raw,deep_buffer,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,raw,deep_buffer,voip_rx"/>
                 <route type="mix" sink="BT SCO Headset"
@@ -195,9 +180,9 @@
                 <route type="mix" sink="BT SCO Car Kit"
                        sources="primary output,raw,deep_buffer,voip_rx"/>
                 <route type="mix" sink="USB Device Out"
-                       sources="primary output,raw,deep_buffer,compressed_offload,hifi_playback,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,raw,deep_buffer,hifi_playback,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="USB Headset Out"
-                       sources="primary output,raw,deep_buffer,compressed_offload,hifi_playback,mmap_no_irq_out,voip_rx"/>
+                       sources="primary output,raw,deep_buffer,hifi_playback,mmap_no_irq_out,voip_rx"/>
                 <route type="mix" sink="Telephony Tx"
                        sources="voice_tx,incall_music_uplink"/>
                 <route type="mix" sink="primary input"
@@ -212,11 +197,11 @@
                 <route type="mix" sink="voip_tx"
                        sources="Built-In Mic,Built-In Back Mic,BT SCO Headset Mic,USB Device In,USB Headset In"/>
                 <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,deep_buffer,compressed_offload,voip_rx"/>
+                       sources="primary output,deep_buffer,voip_rx"/>
                 <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,deep_buffer,compressed_offload,voip_rx"/>
+                       sources="primary output,deep_buffer,voip_rx"/>
                 <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep_buffer,compressed_offload,voip_rx"/>
+                       sources="primary output,deep_buffer,voip_rx"/>
             </routes>
         </module>
 
