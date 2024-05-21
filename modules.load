@@ -112,7 +112,7 @@ oplus_gpio.ko
 aw8697.ko
 haptic.ko
 haptic_feedback.ko
-qcom-i2c-pm ic.ko
+qcom-i2c-pmic.ko
 oplus_nfc.ko
 sg.ko
 spi-msm-geni.ko
