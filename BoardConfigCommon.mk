@@ -6,6 +6,7 @@
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
 COMMON_PATH := device/oneplus/sm8450-common
 
@@ -82,11 +83,13 @@ TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/device_framework_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    hardware/dolby/dolby_framework_matrix.xml
+    hardware/dolby/dolby_framework_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml
 
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest_taro.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_dsds.xml
+ODM_MANIFEST_FILES += $(COMMON_PATH)/manifest_lineage.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
@@ -184,6 +187,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
+CUSTOM_APNS_FILE := $(COMMON_PATH)/configs/apns-conf.xml
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security
@@ -193,6 +197,7 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 # SEPolicy
 include device/qcom/sepolicy_vndr/sm8450/SEPolicy.mk
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
+include device/lineage/sepolicy/qcom/sepolicy.mk
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
