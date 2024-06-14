@@ -83,6 +83,9 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.security.keymint-service-qti)
             ${PATCHELF} --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
             ;;
+        odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc)
+            sed -i "s/chown system system \/sys\/kernel\/oplus_display\/hbm/chmod 0000 \/sys\/kernel\/oplus_display\/hbm/" "${2}"
+            ;;
         odm/lib64/libEIS.so)
             ${PATCHELF} --replace-needed "libui.so" "libui-oos.so" "${2}"
             ;;
