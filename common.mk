@@ -556,18 +556,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
-TARGET_WLAN_CHIP := qca6490
-
-WLAN_CHIPSET := qca_cld3
-
-# Force chip-specific DLKM name
-TARGET_MULTI_WLAN := true
-
-#WPA
-WPA := wpa_cli
-
-# Package chip specific ko files if TARGET_WLAN_CHIP is defined.
-PRODUCT_PACKAGES += qca_cld3_qca6490.ko
+# WiFi firmware symlinks
+PRODUCT_PACKAGES += \
+    firmware_wlanmdsp.otaupdate_symlink \
+    firmware_wlan_mac.bin_symlink \
+    firmware_WCNSS_qcom_cfg.ini_symlink
 
 # WiFi Display
 PRODUCT_PACKAGES += \
