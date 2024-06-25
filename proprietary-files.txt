@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OnePlus 11R (CPH2487_14.0.0.650(EX01)).
+## are from OnePlus 11R (CPH2487_14.0.0.800(EX01)).
 
 # ACDBs
 vendor/etc/acdbdata/IDP_UPD/IDP_UPD_acdb_cal.acdb
@@ -138,8 +138,19 @@ vendor/lib/rfsa/adsp/bm2n55.bin
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio graph manager
+vendor/bin/agmcap
+vendor/bin/agmcompressplay
+vendor/bin/agmplay
+vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service
+vendor/etc/init/vendor.qti.hardware.AGMIPC@1.0-service.rc
 -vendor/lib64/libagm.so
+vendor/lib64/libagm_compress_plugin.so
+vendor/lib64/libagm_mixer_plugin.so
+vendor/lib64/libagm_pcm_plugin.so
+vendor/lib64/libagmclient.so
+vendor/lib64/libagmmixer.so
 -vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
 # Audio-libraries
 vendor/lib64/libadm.so
@@ -1032,7 +1043,7 @@ vendor/lib64/qtiwakelock.so
 vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.ims-V1-ndk_platform.so
 odm/lib64/vendor.oplus.hardware.commondcs-V1-ndk_platform.so
-vendor/lib64/vendor.oplus.hardware.radio-V1-ndk_platform.so
+vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.data.connectionfactory-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.data.dataactivity-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk_platform.so
