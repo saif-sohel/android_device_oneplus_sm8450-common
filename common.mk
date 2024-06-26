@@ -180,6 +180,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
+# Dumpstate
+PRODUCT_PACKAGES += \
+    libdumpstateutil.vendor
+
 # Fastboot
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl.custom \
@@ -526,6 +530,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     android.hardware.wifi.hostapd@1.0.vendor \
     hostapd \
+    libpng.vendor \
     libwpa_client \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
