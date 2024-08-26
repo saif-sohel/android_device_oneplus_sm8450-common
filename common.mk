@@ -353,6 +353,10 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libstagefrighthw
 
+# OSENSE
+PRODUCT_PACKAGES += \
+    vendor.oplus.hardware.osense.client-service
+
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
 
