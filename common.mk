@@ -422,11 +422,11 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
-libsensorndkbridge \
+    android.hardware.sensors-service.oplus-multihal \
+    libsensorndkbridge \
     android.frameworks.sensorservice@1.0 \
     android.frameworks.sensorservice@1.0.vendor \
-        sensors.dynamic_sensor_hal \
+    sensors.dynamic_sensor_hal \
     sensors.oplus
 
 PRODUCT_COPY_FILES += \
