@@ -68,7 +68,8 @@ function blob_fixup() {
             sed -i "s/\/my_product/\/product/" "${2}"
             ;;
         system_ext/lib64/libwfdnative.so)
-            sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${2}"
+            "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hidl.base@1.0.so" "libhidlbase.so" "${2}"   
             ;;
         vendor/etc/media_*/video_system_specs.json)
             sed -i "/max_retry_alloc_output_timeout/ s/1000/0/" "${2}"
@@ -96,6 +97,11 @@ function blob_fixup() {
         vendor/lib64/libqcodec2_core.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libcodec2_shim.so" "${2}"
+            ;;
+        system_ext/lib64/libwfdmmsrc_system.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hidl.base@1.0.so" "libhidlbase.so" "${2}"
             ;;
     esac
 }
