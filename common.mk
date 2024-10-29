@@ -24,6 +24,12 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+PRODUCT_PACKAGES += \
+    libshim_ui \
+    libcodec2_shim \
+    libgui_shim \
+    libhidlbase_shim
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
