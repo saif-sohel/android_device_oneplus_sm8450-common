@@ -71,6 +71,10 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
             "${PATCHELF}" --replace-needed "android.hidl.base@1.0.so" "libhidlbase.so" "${2}"   
             ;;
+        vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
+            [ "$2" = "" ] && return 0
+            grep -q "gettid: 1" "${2}" || echo -e "\ngettid: 1" >> "${2}"
+            ;;
         vendor/etc/media_*/video_system_specs.json)
             sed -i "/max_retry_alloc_output_timeout/ s/1000/0/" "${2}"
             ;;
