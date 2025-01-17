@@ -116,7 +116,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-TARGET_KERNEL_CLANG_VERSION := r522817
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8450
 TARGET_KERNEL_CONFIG := gki_defconfig vendor/waipio_GKI.config vendor/udon.config vendor/oplus_GKI.config vendor/debugfs.config
 
