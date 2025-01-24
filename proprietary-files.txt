@@ -154,18 +154,20 @@ vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
 # Audio-libraries
 vendor/lib64/libadm.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
-vendor/lib64/libar-acdb.so
-vendor/lib64/libar-gpr.so
-vendor/lib64/libar-gsl.so
--vendor/lib64/libar-pal.so
-vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/libmcs.so;DISABLE_CHECKELF
+vendor/lib64/libqtigefar.so;DISABLE_CHECKELF
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
+
+# Audio FX modules
 vendor/lib64/libfmpal.so
 vendor/lib64/liblx-ar_util.so
 vendor/lib64/liblx-osal.so
@@ -218,6 +220,7 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
+vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
 vendor/lib64/libbt-hidlclient.so
