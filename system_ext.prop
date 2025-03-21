@@ -49,4 +49,8 @@ persist.vendor.sensors.enable.mag_filter=true
 ro.vendor.qti.va_aosp.support=1
 
 # LHDC
-persist.bluetooth.a2dp.lhdc=true
+persist.vendor.bt.a2dp.lhdc_enabled=true
+persist.vendor.bt.a2dp.lhdcv5_enabled=true
+persist.vendor.bluetooth.lhdc.version=5
+persist.vendor.bluetooth.lhdc.quality_mode=auto
+persist.vendor.bluetooth.lhdc.bitrate=900000
