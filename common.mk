@@ -581,13 +581,5 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
 
-
-# LHDC
-PRODUCT_PACKAGES += \
-    liblhdc \
-    liblhdcBT_enc \
-    liblhdcv5 \
-    liblhdcv5BT_enc    
-
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8450-common/sm8450-common-vendor.mk)
