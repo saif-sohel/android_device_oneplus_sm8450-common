@@ -40,8 +40,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=27,23,38$', 'IGNORED_IRQ=27,23,38,115,332'),
     'vendor/lib64/sensors.ssc.so': blob_fixup()
-        .replace_hex_string('qti.sensor.wise_light', 'android.sensor.light\x00')
-        .sigscan('F1 E9 D3 84 52 49 3F A0 72', 'F1 A9 00 80 52 09 00 A0 72'),
+        .binary_regex_replace(b'qti.sensor.wise_light', b'android.sensor.light\x00')
+        .sig_replace('F1 E9 D3 84 52 49 3F A0 72', 'F1 A9 00 80 52 09 00 A0 72'),
     'vendor/bin/hw/android.hardware.security.keymint-service-qti': blob_fixup()
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     'odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
