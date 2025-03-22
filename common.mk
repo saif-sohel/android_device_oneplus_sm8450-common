@@ -178,6 +178,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     OplusDoze
 
+
+# Dolby
+$(call inherit-product, hardware/oplus/dolby/dolby.mk)
+
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
