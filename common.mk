@@ -574,5 +574,10 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
 
+# perf shim
+PRODUCT_PACKAGES += \
+    libprocessgroup_shim \
+    libbase_shim
+
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8450-common/sm8450-common-vendor.mk)
