@@ -493,7 +493,7 @@ PRODUCT_PACKAGES += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.oplus
+    vendor.lineage.touch-service.oplus
 
 # TrustedUI
 PRODUCT_PACKAGES += \
