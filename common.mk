@@ -202,6 +202,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
+$(call soong_config_set,surfaceflinger,udfps_lib,//hardware/oplus:libudfps_extension.oplus)
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
