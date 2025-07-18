@@ -47,6 +47,8 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
+    'odm/etc/gps.conf': blob_fixup()
+        .regex_replace('com.oplus.locationproxy', 'com.google.android.carrierlocation'),
     'odm/bin/hw/vendor-oplus-hardware-performance-V1-service': blob_fixup()
         .add_needed('libbase_shim.so')
         .add_needed('libprocessgroup_shim.so'),
