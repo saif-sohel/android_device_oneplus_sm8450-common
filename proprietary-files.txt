@@ -209,7 +209,15 @@ vendor/lib64/libcdsprpc.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# Charger
+# Charging
+odm/bin/hw/vendor.oplus.hardware.charger-V6-service
+odm/etc/init/vendor.oplus.hardware.charger-V6-service.rc
+odm/etc/vintf/manifest/manifest_oplus_charger_aidl.xml
+odm/firmware/fastchg/charging_thermal_config_default.txt
+odm/firmware/fastchg/smart_chg_config_table.txt
+odm/lib64/libGaiaClient_vnd.so
+odm/lib64/vendor.oplus.hardware.charger-V6-ndk_platform.so
+odm/lib64/vendor.oplus.hardware.charger@1.0.so
 vendor/etc/charger_fw_fstab.qti
 
 # CNE
@@ -574,6 +582,18 @@ vendor/lib64/vendor.qti.gnss-service.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.1.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so;MODULE_SUFFIX=_vendor
+
+# Horae
+system/lib64/libostatslog.so:system_ext/lib64/libostatslog.so
+system/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so:system_ext/lib64/vendor.oplus.hardware.displaypanelfeature-V1-ndk.so
+system/lib64/vendor.oplus.hardware.performance-V1-ndk.so:system_ext/lib64/vendor.oplus.hardware.performance-V1-ndk.so
+system_ext/bin/horae
+system_ext/etc/horae/horae.conf
+system_ext/etc/horae/horae_SM8450.conf
+system_ext/etc/horae/horae_SM8475.conf
+system_ext/etc/init/horae.rc
+system_ext/lib64/vendor.oplus.hardware.charger-V1-ndk.so
+system_ext/lib64/vendor.oplus.hardware.displaypanelfeature@1.0.so
 
 # Hotword Enrollment
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
