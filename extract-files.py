@@ -58,8 +58,6 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libinput_shim.so')
         .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so'),
-    'vendor/etc/seccomp_policy/wfdhdcphalservice.policy': blob_fixup()
-        .add_line_if_missing('gettid: 1'),
     'vendor/etc/media_*/video_system_specs.json': blob_fixup()
         .regex_replace('(max_retry_alloc_output_timeout": )1000', '\\10'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
