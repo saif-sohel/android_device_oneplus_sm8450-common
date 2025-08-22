@@ -795,11 +795,10 @@ vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.qspmhal@1.0.so
 
 # Power-off alarm - from OnePlus 11R (CPH2487_13.1.0.583(EX01)).
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|45c973fe28d2c64fd8954dc9ea02622c40967d8a
-vendor/bin/power_off_alarm|534a9633e7144b99bbd80114d2b222108369afd8
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|bccf8a1c7f72d6ac6237da9e6358dfd431ce0118
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so|e53ebd67415a6e8ec23a8476a5cbb035cc84664b
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # QCC
 system_ext/app/QCC/QCC.apk
@@ -816,24 +815,6 @@ system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so
 system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so
 system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
-system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
-vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
-
-# QCC
-system_ext/app/QCC/QCC.apk
-system_ext/bin/qccsyshal@1.2-service
-system_ext/etc/init/vendor.qti.hardware.qccsyshal@1.2-service.rc
-system_ext/etc/permissions/com.qti.qcc.vendor_qcc.xml
-system_ext/lib64/libqcc.so
-system_ext/lib64/libqcc_file_agent_sys.so
-system_ext/lib64/libqccdme.so
-system_ext/lib64/libqccfileservice.so
-system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so
-system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1.so
-system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so
-system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so
-system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
@@ -1063,7 +1044,6 @@ vendor/lib64/qtiril-utils.so
 vendor/lib64/qtiwakelock.so
 vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V1-ndk_platform.so;SYMLINK=odm/lib64/vendor.oplus.hardware.communicationcenter-V1-ndk_platform.so
-vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.ims-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
