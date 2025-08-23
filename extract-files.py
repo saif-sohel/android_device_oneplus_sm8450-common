@@ -1,10 +1,9 @@
 #!/usr/bin/env -S PYTHONPATH=../../../tools/extract-utils python3
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
-#
+# SPDX-FileCopyrightText: 2024 The LineageOS Project
 # SPDX-License-Identifier: Apache-2.0
 #
+
 
 from extract_utils.fixups_blob import (
     blob_fixup,
@@ -24,7 +23,6 @@ namespace_imports = [
     'hardware/oplus',
     'hardware/qcom-caf/sm8450',
     'hardware/qcom-caf/wlan',
-    'hardware/pixelworks',
     'vendor/qcom/opensource/commonsys-intf/display',
     'vendor/qcom/opensource/commonsys/display',
     'vendor/qcom/opensource/dataservices',
@@ -51,48 +49,43 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'odm/etc/gps.conf': blob_fixup()
-        .regex_replace('com.oplus.locationproxy', 'com.google.android.carrierlocation'),
     'odm/bin/hw/vendor-oplus-hardware-performance-V1-service': blob_fixup()
         .add_needed('libbase_shim.so')
         .add_needed('libprocessgroup_shim.so'),
-    'odm/etc/camera/CameraHWConfiguration.config': blob_fixup()
-        .regex_replace('(SystemCamera = )1;', '\\10;')
-        .regex_replace('(SystemCamera = )0;$', '\\11;'),
+    'odm/etc/gps.conf': blob_fixup()
+        .regex_replace('com.oplus.locationproxy', 'com.google.android.carrierlocation'),
+    ('odm/lib64/mediadrm/libwvdrmengine.so', 'odm/lib64/libwvhidl.so'): blob_fixup()
+        .add_needed('libcrypto_shim.so'),
+    'product/app/PowerOffAlarm/PowerOffAlarm.apk': blob_fixup()
+        .apktool_patch('blob-patches/PowerOffAlarm.patch'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .add_needed('libinput_shim.so')
-        .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so'),
-    'vendor/etc/media_*/video_system_specs.json': blob_fixup()
-        .regex_replace('(max_retry_alloc_output_timeout": )1000', '\\10'),
+    'vendor/bin/hw/vendor.qti.hardware.display.composer-service': blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V5-ndk_platform.so', 'vendor.qti.hardware.display.config-V5-ndk.so'),
+    ('vendor/etc/media_cape/video_system_specs.json', 'vendor/etc/media_taro/video_system_specs.json'): blob_fixup()
+        .regex_replace('"max_retry_alloc_output_timeout": 10000,', '"max_retry_alloc_output_timeout": 0,'),
+    ('vendor/etc/media_codecs_cape.xml', 'vendor/etc/media_codecs_cape_vendor.xml', 'vendor/etc/media_codecs_taro.xml', 'vendor/etc/media_codecs_taro_vendor.xml'): blob_fixup()
+        .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).*\n', ''),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=27,23,38$', 'IGNORED_IRQ=27,23,38,115,332'),
-    'vendor/lib64/sensors.ssc.so': blob_fixup()
-        .binary_regex_replace(b'qti.sensor.wise_light', b'android.sensor.light\x00')
-        .sig_replace('F1 E9 D3 84 52 49 3F A0 72', 'F1 A9 00 80 52 09 00 A0 72'),
-    'vendor/bin/hw/android.hardware.security.keymint-service-qti': blob_fixup()
-        .add_needed('android.hardware.security.rkp-V3-ndk.so'),
-    'odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc': blob_fixup()
-        .regex_replace('chown system system /sys/kernel/oplus_display/hbm', 
-                      'chmod 0000 /sys/kernel/oplus_display/hbm'),
-    'odm/lib64/libEIS.so': blob_fixup()
-        .replace_needed('libui.so', 'libui-oos.so'),
+    ('vendor/bin/hw/android.hardware.gnss-aidl-service-qti', 'vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so', 'vendor/lib64/libgarden.so', 'vendor/lib64/libgarden_haltests_e2e.so'): blob_fixup()
+        .replace_needed('android.hardware.gnss-V1-ndk_platform.so', 'android.hardware.gnss-V1-ndk.so'),
+    ('vendor/bin/hw/android.hardware.security.keymint-service-qti', 'vendor/lib64/libqtikeymint.so'): blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V1-ndk_platform.so', 'android.hardware.security.keymint-V1-ndk.so')
+        .replace_needed('android.hardware.security.secureclock-V1-ndk_platform.so', 'android.hardware.security.secureclock-V1-ndk.so')
+        .replace_needed('android.hardware.security.sharedsecret-V1-ndk_platform.so', 'android.hardware.security.sharedsecret-V1-ndk.so')
+        .add_needed('android.hardware.security.rkp-V1-ndk.so'),
     ('vendor/lib64/libqcrilNr.so', 'vendor/lib64/libril-db.so'): blob_fixup()
         .binary_regex_replace(rb'persist\.vendor\.radio\.poweron_opt', rb'persist.vendor.radio.poweron_ign'),
     'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
         .add_needed('libhidlbase_shim.so'),
-    'vendor/lib64/libqcodec2_core.so': blob_fixup()
-        .add_needed('libcodec2_shim.so'),
-    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
-        .add_needed('libgui_shim.so')
-        .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so'),
 }
 
 module = ExtractUtilsModule(
     'sm8450-common',
     'oneplus',
     blob_fixups=blob_fixups,
+    lib_fixups=lib_fixups,
     check_elf=True,
     namespace_imports=namespace_imports
 )

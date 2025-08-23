@@ -48,14 +48,11 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl \
-    agmcap \
-    agmcompressplay \
-    agmplay \
+    audioadsprpcd \
     audio.bluetooth.default \
     audio.primary.taro \
     audio.r_submix.default \
     audio.usb.default \
-    audioadsprpcd \
     lib_bt_aptx \
     lib_bt_ble \
     lib_bt_bundle \
@@ -63,17 +60,21 @@ PRODUCT_PACKAGES += \
     libagm_mixer_plugin \
     libagm_pcm_plugin \
     libbatterylistener \
-    libhfp_pal \
+    libeffectproxy \
+    libfmpal \
+    libhapticgenerator \
+    libldnhncr \
     libpalclient \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libstdc++.vendor \
-    libtinycompress \
+    libreverbwrapper \
+    libvisualizer \
     libvolumelistener \
     sound_trigger.primary.taro \
     vendor.qti.hardware.AGMIPC@1.0-service
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
+QCV_FAMILY_SKUS := cape taro
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cape/audio_policy_configuration.xml \
@@ -343,7 +344,6 @@ PRODUCT_COPY_FILES += \
 
 # OSENSE
 PRODUCT_PACKAGES += \
-    vendor.oplus.hardware.osense.client-V1-ndk_platform.vendor \
     vendor.oplus.hardware.osense.client-service
 
 # Overlays
@@ -439,11 +439,7 @@ BOARD_SHIPPING_API_LEVEL := 30
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
     hardware/oplus \
-    hardware/qcom-caf/common/libqti-perfd-client
 
 # Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
