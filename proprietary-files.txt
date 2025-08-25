@@ -45,6 +45,7 @@ vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # ADSP modules
 vendor/lib/rfsa/adsp/bm2n00.bin
@@ -152,28 +153,8 @@ vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Audio FX modules
-odm/lib64/libtfa98xx.so
 vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
-vendor/lib64/soundfx/libbundlewrapper.so
-vendor/lib64/soundfx/libdownmix.so
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libeffectproxy.so
-vendor/lib64/soundfx/libhapticgenerator.so
-vendor/lib64/soundfx/libldnhncr.so
-vendor/lib64/soundfx/libqcompostprocbundle.so
-vendor/lib64/soundfx/libqcomvisualizer.so
-vendor/lib64/soundfx/libqcomvoiceprocessing.so
-vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libshoebox.so
-vendor/lib64/soundfx/libvisualizer.so
-vendor/lib64/libsndcardparser.so
-vendor/lib64/vendor.qti.hardware.dsp@1.0.so
-
-# Audio Listen
-vendor/etc/vintf/manifest/manifest_non_qmaa.xml
-vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
-vendor/lib64/hw/sound_trigger.primary.taro.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -615,8 +596,8 @@ system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libdiag_system.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
-system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib64/arm64/libimscamera_jni.so
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib64/arm64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
@@ -687,7 +668,6 @@ vendor/bin/init.kernel.post_boot-cape.sh
 vendor/bin/init.kernel.post_boot-taro.sh
 vendor/bin/init.kernel.post_boot.sh
 vendor/bin/init.qti.kernel.sh
-vendor/bin/init.qti.write.sh
 vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
 
@@ -775,10 +755,17 @@ vendor/lib64/libvideotxr.so
 # Native public libraries
 vendor/etc/public.libraries.txt
 
-# Neural networks
-odm/lib64/QNN_lib/libQnnHtp.so;SYMLINK=odm/lib64/aiboost/libQnnHtp.so
-odm/lib64/QNN_lib/libQnnHtpPrepare.so;SYMLINK=odm/lib64/aiboost/libQnnHtpPrepare.so
-odm/lib64/QNN_lib/libQnnHtpV69Stub.so;SYMLINK=odm/lib64/aiboost/libQnnHtpV69Stub.so
+# OMX
+vendor/lib64/libAlacSwDec.so
+vendor/lib64/libApeSwDec.so
+vendor/lib64/libEvrcSwCodec.so
+vendor/lib64/libFlacSwDec.so
+vendor/lib64/libQcelp13SwCodec.so
+vendor/lib64/libdsd2pcm.so
+
+# Oplus Log Core
+vendor/lib64/libolc_vnd.so
+vendor/lib64/vendor.oplus.hardware.olc2-V1-ndk_platform.so
 
 # Oplus osense
 odm/lib64/libosenseaidlhalclient.so
@@ -793,12 +780,6 @@ vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
-
-# Oplus performance
-odm/bin/hw/vendor-oplus-hardware-performance-V1-service
-odm/etc/init/vendor-oplus-hardware-performance-V1-service.rc
-odm/etc/vintf/manifest/manifest_performance_aidl.xml
-odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so
 
 # Perf
 vendor/lib64/libqti-util.so
@@ -1161,7 +1142,7 @@ odm/firmware/tp/22803/FW_S3910_TIANMA_FAE.img
 odm/firmware/tp/22803/FW_S3910_TIANMA_HBP.img
 odm/firmware/tp/22803/FW_S3910_TIANMA_HBP_FAE.img
 odm/firmware/tp/22803/FW_S3910_TIANMA_sys_edge_touch_config.img
-odm/firmware/tp/22803/LIB_S3910_TIANMA_HBP.so
+odm/firmware/tp/22803/LIB_S3910_TIANMA_HBP.so;FIX_SONAME
 odm/firmware/tp/22803/LIMIT_S3910_TIANMA.img
 odm/firmware/tp/22803/LIMIT_S3910_TIANMA_AGING.img
 odm/firmware/tp/22803/LIMIT_S3910_TIANMA_HBP.img

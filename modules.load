@@ -117,7 +117,6 @@ wlan_firmware_service.ko
 cnss_plat_ipc_qmi_svc.ko
 cnss_nl.ko
 cnss_prealloc.ko
-ax88179_178a.ko
 msm_sharedmem.ko
 phy-qcom-emu.ko
 phy-msm-ssusb-qmp.ko
@@ -144,7 +143,6 @@ oplus_bsp_tp_notify.ko
 oplus_bsp_tp_tcm_oncell.ko
 oplus_bsp_tp_tcm_S3910.ko
 oplus_bsp_tp_syna_comnon.ko
-synaptics_tcm2.ko
 pm8941-pwrkey.ko
 qcom-hv-haptics.ko
 oplus_fp_common.ko
@@ -182,7 +180,6 @@ sdhci-msm.ko
 leds-qti-flash.ko
 leds-qti-tri-led.ko
 leds-qpnp-vibrator-ldo.ko
-leds_aw210xx.ko
 plh_vendor.ko
 gplaf_vendor.ko
 shared_rail_vendor.ko
