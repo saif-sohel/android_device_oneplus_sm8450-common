@@ -10,28 +10,15 @@ on fs
 
 on boot
     # Display
-    chown system system /sys/kernel/oplus_display/dump_info
-    chown system system /sys/kernel/oplus_display/seed
-    chown system system /sys/kernel/oplus_display/panel_pwr
     chown system system /dev/oplus_display
     chown system system /sys/kernel/oplus_display/dimlayer_bl_en
-    chown system system /sys/kernel/oplus_display/ffl_set
-    chown system system /sys/kernel/oplus_display/force_screenfp
-    chown system system /sys/kernel/oplus_display/notify_fppress
-    chown system system /sys/kernel/oplus_display/aod_light_mode_set
-    chown system system /sys/kernel/oplus_display/power_status
-    chown system system /sys/kernel/oplus_display/sau_closebl_node
-    chown system system /sys/kernel/oplus_display/esd_status
-    chown system system /sys/kernel/oplus_display/spr
-    chown system system /sys/kernel/oplus_display/write_panel_reg
-    chown system system /sys/kernel/oplus_display/max_brightness
     chown system system /sys/kernel/oplus_display/dynamic_osc_clock
-
-    chmod 0000 /sys/kernel/oplus_display/hbm
+    chown system system /sys/kernel/oplus_display/hbm
+    chown system system /sys/kernel/oplus_display/notify_fppress
+    chown system system /sys/kernel/oplus_display/panel_serial_number
 
     # Sensors
     chown system system /sys/devices/platform/soc/soc:sensor_fb/adsp_notify
-    chmod 0666 /dev/oplus_consumer_ir
 
     # TOF
     chown cameraserver cameraserver /sys/kernel/tof_control/app0/alg_setting
@@ -52,6 +39,9 @@ on property:ro.boot.prjname=*
     setprop ro.separate.soft ${ro.boot.prjname}
 
 on property:sys.boot_completed=1
+    # Charging
+    chown system system /dev/oplus_chg
+
     # Display
     copy /vendor/etc/Oplus_QC_LTM_SM8450_2021_10_12.pfm /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8450_2021_10_12.pfm
     copy /vendor/etc/Oplus_QC_LTM_SM8475_2022_07_05.pfm /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8475_2022_07_05.pfm
@@ -64,10 +54,6 @@ on property:sys.boot_completed=1
 
     # Widevine
     copy /vendor/etc/oplus_Widevine_licenses.pfm /mnt/vendor/persist/data/pfm/licenses/oplus_Widevine_licenses.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8450_2021_10_12.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8475_2022_07_05.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM8475_2022_05_10.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/Oplus_QC_LTM_SM7475_2023_02_01.pfm
     chown system system /mnt/vendor/persist/data/pfm/licenses/oplus_Widevine_licenses.pfm
 
 on property:vendor.post_boot.parsed=1

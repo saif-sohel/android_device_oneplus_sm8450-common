@@ -4,6 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Charger
+/sys/class/oplus_chg/*  chg_enable             0660    system  system
+/sys/class/oplus_chg/*  mmi_charging_enable    0660    system  system
+
 # NFC
 /dev/st21nfc    0660    nfc               nfc
 /dev/st54spi    0660    secure_element    secure_element
@@ -13,4 +17,4 @@
 /dev/block/sdf9    0660    root    system
 
 # WiFi
-firmware_directories /mnt/vendor/persist/copy/ /mnt/vendor/persist/copy/ /odm/etc/wifi/ /mnt/vendor/persist/ /vendor/firmware_mnt/image/ /mnt/vendor/persist/
+firmware_directories /mnt/vendor/persist/copy/ /odm/etc/wifi/ /mnt/vendor/persist/
